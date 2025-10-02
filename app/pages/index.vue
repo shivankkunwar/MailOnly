@@ -14,7 +14,7 @@
             <div v-else class="email-list">
                 <h1>Inbox</h1>
                 <div class="email-count">
-                    {{ emails.length }} emails
+                    {{ emails?.length }} emails
                 </div>
 
                 <div
@@ -38,6 +38,7 @@
 
 <script setup lang="ts">
 // No imports needed - Nuxt auto-imports everything!
+import {useEmail} from "../../composables/useEmail"
 const { emails, loading, error, fetchEmails } = useEmail();
 
 onMounted(() => {
